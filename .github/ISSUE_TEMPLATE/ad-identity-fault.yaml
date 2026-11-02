@@ -1,0 +1,29 @@
+name: "🔑 Active Directory & Identity Fault"
+description: Log replication issues, GPO failures, or account lockouts.
+title: "[AD] "
+labels: ["active-directory", "help-desk"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 👑 Domain Controller & Identity Service Ticket
+        Track directory service state degradation and Kerberos / GPO faults.
+
+  - type: dropdown
+    id: ad-category
+    attributes:
+      label: Service Domain Affected
+      options:
+        - "Replication / DNS (repadmin / dcdiag errors)"
+        - "Group Policy (GPO mapping, Registry filtering)"
+        - "Authentication (Kerberos tokens, LDAP binds, User lockouts)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: triage
+    attributes:
+      label: Event Viewer / CLI Diagnostics
+      placeholder: "e.g., Event ID 13568 File Replication Service. dcdiag failing on target DC..."
+    validations:
+      required: true

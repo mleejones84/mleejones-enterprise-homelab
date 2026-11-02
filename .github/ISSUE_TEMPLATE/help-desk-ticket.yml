@@ -1,0 +1,117 @@
+name: "🎫 Standard Help Desk Ticket"
+description: Log an incident with an enterprise-grade Markdown structure for your portfolio.
+title: "Ticket #INC-"
+labels: ["help-desk", "resolved"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Ticket Fields & Details
+        Fill out the core parameters below to build the executive ticket table.
+
+  - type: dropdown
+    id: user-asset
+    attributes:
+      label: "User / Asset Name"
+      description: "What system is affected?"
+      options:
+        - "Host Workstation (Dell Precision 3440)"
+        - "Domain Controller (Windows Server 2022)"
+        - "Storage Node (TrueNAS Core)"
+        - "Network Core Switch"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: "Severity"
+      options:
+        - "Low (Minor operational impact)"
+        - "Medium (Degraded performance)"
+        - "High (User unable to view primary interface / total dropout)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Category"
+      options:
+        - "Hardware / Display Peripherals"
+        - "Networking / Infrastructure"
+        - "Active Directory / Identity Service"
+    validations:
+      required: true
+
+  - type: input
+    id: time-to-resolve
+    attributes:
+      label: "Time to Resolve"
+      placeholder: "e.g., 2.5 Hours"
+    validations:
+      required: true
+
+  - type: textarea
+    id: executive-summary
+    attributes:
+      label: "## Executive Summary"
+      description: "Provide a quick one or two-sentence overview of the cascading degradation."
+      placeholder: "🚨 Incident Report: Chronic screen flickering and signal drops observed on primary display panel..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: symptoms-triage
+    attributes:
+      label: "### 1. Initial Symptoms & Software Triage"
+      description: "Detail your first observations and software layer checks using bullet points."
+      placeholder: |
+        - **Action taken:** 
+        - **Result:** 
+    validations:
+      required: true
+
+  - type: textarea
+    id: pre-os-analysis
+    attributes:
+      label: "### 2. Pre-OS Environment Analysis"
+      description: "Detail behavior at the pre-boot level to isolate the OS."
+      placeholder: |
+        - **Observation:** 
+        - **Deduction:** 
+    validations:
+      required: true
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: "### 3. Differential Port & Peripheral Diagnostics"
+      description: "Outline the boundary testing executed to isolate components."
+      placeholder: |
+        - **Port 1 Isolation:** 
+        - **Port 2 Isolation:** 
+        - **Peripheral Validation:** 
+    validations:
+      required: true
+
+  - type: textarea
+    id: root-cause
+    attributes:
+      label: "### 4. Root Cause Determination"
+      description: "State the definitive failure point."
+      placeholder: "The independent panel test definitively ruled out..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: "## 🛠 Implemented Engineering Solution"
+      description: "List the architectural bypasses or fixes applied."
+      placeholder: |
+        1. **Bus Conversion:** 
+        2. **Topology Stabilization:** 
+        3. **Result:** 
+    validations:
+      required: true

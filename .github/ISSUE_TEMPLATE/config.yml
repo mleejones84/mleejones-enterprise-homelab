@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 View Home Lab Docs
+    url: https://github.com
+    about: Look at existing documentation before opening a new ticket.
+  - name: 📖 View Active Directory Folder
+    url: https://github.com
+    about: Jump straight to Active Directory markdown files.
+  - name: 🛠️ View Hardware Folder
+    url: https://github.com
+    about: Jump straight to Hardware diagnostic markdown files.
+  - name: 📡 View Networking Folder
+    url: https://github.com
+    about: Jump straight to Networking config and fault markdown files.

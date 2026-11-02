@@ -1,0 +1,35 @@
+name: "📡 Networking & Infrastructure Fault"
+description: Log VLAN mismatches, DNS drops, or router configuration issues.
+title: "[NET] "
+labels: ["networking", "help-desk"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 🌐 Network Topology & Infrastructure Ticket
+        Isolate layers 1 through 3 to get the packets flowing again.
+
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Suspected Failure Layer
+      options:
+        - "Layer 1: Physical (Cables, SFP+ modules, switch ports)"
+        - "Layer 2: Data Link (VLAN tagging, MAC filtering, ARP issues)"
+        - "Layer 3: Network (IP routing, DHCP scopes, DNS resolution, Firewall rules)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: symptoms
+    attributes:
+      label: Diagnostic Logs / Ping & Traceroute Results
+      placeholder: "e.g., Request timed out to gateway 10.0.10.1. nslookup resolving to external instead of local domain..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: mitigation
+    attributes:
+      label: 🛠️ Resolution / Configuration Change
+      placeholder: "e.g., Corrected untagged port configuration on Switch 2, Trunk profile fixed."

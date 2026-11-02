@@ -1,0 +1,39 @@
+name: "🚨 Hardware Failure Ticket"
+description: Log a broken component or server issue in the home lab.
+title: "[HW] "
+labels: ["hardware", "help-desk"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 🖥️ Home Lab Hardware Ticket
+        Fill out this form to track physical hardware issues.
+  
+  - type: dropdown
+    id: node
+    attributes:
+      label: Which Server/Node?
+      options:
+        - Proxmox-01
+        - TrueNAS-Core
+        - RaspberryPi-Cluster
+        - Network Switch / Router
+    validations:
+      required: true
+
+  - type: textarea
+    id: symptoms
+    attributes:
+      label: What are the symptoms?
+      placeholder: "e.g., Solid red light on drive bay 3, node is throwing kernel panics..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: troubleshooting
+    attributes:
+      label: Initial Troubleshooting Steps
+      options:
+        - label: Power cycled the machine
+        - label: Checked physical cable connections
+        - label: Reviewed IPMI / Syslog logs
