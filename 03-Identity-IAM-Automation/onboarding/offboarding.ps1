@@ -12,11 +12,11 @@ $TargetUser = $TargetUser.Trim().ToLower()
 
 # 3. Directory Existence Verification
 try {
-    $ADUser = Get-ADUser -Identity $TargetUser -Properties MemberOf, Description
+    $ADUser = Get-ADUser -Identity $TargetUser -Properties MemberOf, Description, Department
 }
 catch {
     Write-Error "CRITICAL: Target identity '$TargetUser' does not exist in mleejones.lab. Aborting pipeline."
-    Exit
+    return
 }
 
 Write-Host "`n[!] Initiating offboarding sequence for: $($ADUser.Name) ($TargetUser)" -ForegroundColor Yellow
