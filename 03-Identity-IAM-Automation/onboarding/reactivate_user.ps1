@@ -16,7 +16,7 @@ try {
 }
 catch {
     Write-Error "CRITICAL: Target identity '$TargetUser' not found in directory. Aborting."
-    Exit
+    return
 }
 
 # 4. Gather New Deployment Metadata
